@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh" ng-app="App">
+<head>
+  <meta charset="UTF-8">
+  <title>{{"学习AngularJS 1.x"}}</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+
+
+  <div class="block__wrap">
+
+    <input type="text" ng-model="data.style" />
+    <p class="{{data.style}}"> 示例文本，可以输入 bold, strike, red 来改变样式 </p>
+
+  </div>
+
+  <div class="block__wrap">
+
+    <input type="checkbox" ng-model="data.flag">
+    通过复选框来控制文字是否显示
+
+    <div ng-if="data.flag">
+      <p>ng-if 中的文字</p>
+    </div>
+
+
+    <div ng-show="data.flag">
+      <p>ng-show 中的文字</p>
+    </div>
+
+    <div ng-hide="data.flag">
+      <p>ng-hide 中的文字</p>
+    </div>
+
+    <div class="data.name">
+    {{data.flag}}
+    </div>
+
+  </div>
+
+  <div class="block__wrap" ng-controller="FirstCtrl">
+
+    <table>
+      <tr ng-repeat="x in list">
+        <td>{{x.name}} </td>
+        <td>
+          <input type="button" value="我是第 {{$index}} 行的按钮" ng-click="onClick($index)" >
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+  <div class="block__wrap" ng-controller="FirstCtrl">
+    <p>{{ 1234 | number:2 }}</p>
+
+   <p> {{ 1234.56 | currency:"人民币 ¥ " :0 }}</p>
+
+    <p>
+      {{ list | orderBy: 'name' | json }}
+    </p>
+
+
+    <table>
+      <tr ng-repeat="x in list | orderBy: 'name'">
+        <td>{{x.name}} </td>
+        <td>
+          <input type="button" value="我是第 {{$index}} 行的按钮" ng-click="onClick($index)" >
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+  <div class="block__wrap" ng-controller="FirstCtrl">
+    <h1>
+      {{ data.message | reverse }}
+    </h1>
+    <input type="text"  ng-model="data.message">
+  </div>
+
+  <div class="block__wrap" ng-controller="FirstCtrl">
+    <input type="text"  ng-model="searchText">
+
+    <table>
+      <tr ng-repeat="x in list | filter:searchText">
+        <td>{{x.name}} </td>
+        <td>
+      </tr>
+    </table>
+
+  </div>
+
+  <div class="block__wrap" ng-controller="FirstCtrl">
+    <p ng-class="{strike: deleted, bold: important, 'has-error': error}"> 示例文字
+    </p>
+
+    <input type="checkbox" ng-model="deleted">
+      选中后上方文字将加上删除线（style中加上strike类） <br>
+    <input type="checkbox" ng-model="important">
+      选中后上方文字将变化为粗体（style中加上bold类） <br>
+    <input type="checkbox" ng-model="error">
+      选中后上方文字将变红，背景变黄（style中加上has-error类）
+  </div>
+
+
+  <div class="block__wrap" ng-controller="FirstCtrl">
+    <p ng-class="data.style">
+      直接使用字符串作为样式
+    </p>
+    <input type="text" ng-model="data.style">
+  </div>
+
+
+  <div class="block__wrap" ng-controller="FirstCtrl">
+
+    <p ng-class="[data.style, {orange: warning}]">同时用两种样式</p>
+  </div>
+
+
+  <div class="block__wrap"></div>
+
+  <script type="text/JavaScript" src="components/angular/angular.min.js"></script>
+  <script type="text/JavaScript" src="js/app.js"></script>
+</body>
+</html>

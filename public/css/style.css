@@ -1,0 +1,30 @@
+.block__wrap {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.red {
+  color: red;
+}
+
+/* 错误 */
+.has-error {
+    color: red;
+    background-color: yellow;
+}
+
+/* 橙色 */
+
+.orange {
+    color: orange;
+}

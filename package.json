@@ -1,0 +1,23 @@
+{
+  "name": "start_angular1.x",
+  "version": "1.0.0",
+  "description": "learn",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "http-server -a 0.0.0.0 -p 7070"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vivian-xu/start_angular1.x.git"
+  },
+  "author": "vivian-xu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vivian-xu/start_angular1.x/issues"
+  },
+  "homepage": "https://github.com/vivian-xu/start_angular1.x#readme",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}
